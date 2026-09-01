@@ -4,30 +4,192 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Água que não vemos</title>
     <style>
-     header{
-        background-color: #11bae4;
-        color:#11bae4;
-        max-width:800px;
-        margin: 0 auto;
-        padding: 16px;
-        border: 5px solid cornflowerblue;
-     }
-     main {
-        background-color: #1115e4;
-        color: aqua;
-        max-width: 800px;
-        margin: 0 auto;
-     }
-     </style>
-     
-    <h1> o meu blog é de a agua que não vemos
-        <p>vou compartilhar sobre a agua que não vemos
-        
+        :root {
+            --azul-escuro: #0b2a5b;
+            --azul-medio: #1f7ad9;
+            --azul-claro: #dff7ff;
+            --texto: #15314d;
+            --branco: #ffffff;
+        }
 
+        * {
+            box-sizing: border-box;
+        }
 
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: linear-gradient(180deg, #c8efff 0%, #ecfbff 100%);
+            color: var(--texto);
+        }
+
+        .pagina {
+            max-width: 1100px;
+            margin: 32px auto;
+            padding: 0 20px 40px;
+        }
+
+        .cabecalho {
+            background: linear-gradient(135deg, var(--azul-medio), var(--azul-escuro));
+            color: var(--branco);
+            padding: 28px 30px;
+            border-radius: 18px 18px 0 0;
+            box-shadow: 0 10px 25px rgba(13, 44, 90, 0.15);
+        }
+
+        .cabecalho-topo {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .marcador {
+            font-size: 0.8rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            opacity: 0.8;
+        }
+
+        .menu {
+            display: flex;
+            gap: 18px;
+            flex-wrap: wrap;
+            font-size: 0.95rem;
+        }
+
+        .menu a {
+            color: var(--branco);
+            text-decoration: none;
+            opacity: 0.9;
+        }
+
+        .menu a:hover {
+            opacity: 1;
+        }
+
+        .conteudo {
+            background: rgba(255, 255, 255, 0.75);
+            backdrop-filter: blur(2px);
+            padding: 30px;
+            border-radius: 0 0 18px 18px;
+            box-shadow: 0 12px 28px rgba(13, 44, 90, 0.08);
+        }
+
+        .hero {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 28px;
+            align-items: center;
+        }
+
+        .hero-texto h1 {
+            font-size: clamp(2rem, 4vw, 3rem);
+            line-height: 1.1;
+            margin: 10px 0 18px;
+        }
+
+        .hero-texto p {
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin: 0;
+        }
+
+        .tag {
+            display: inline-block;
+            background: #e4f8ff;
+            color: var(--azul-escuro);
+            border: 1px solid #c2ebff;
+            border-radius: 999px;
+            padding: 8px 14px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+        }
+
+        .imagem-post {
+            width: 100%;
+            border-radius: 18px;
+            display: block;
+            border: 4px solid rgba(31, 122, 217, 0.2);
+            box-shadow: 0 18px 35px rgba(13, 44, 90, 0.18);
+        }
+
+        .artigo {
+            margin-top: 32px;
+            padding-top: 24px;
+            border-top: 2px solid rgba(31, 122, 217, 0.15);
+        }
+
+        .artigo h2 {
+            margin-top: 0;
+            font-size: 2rem;
+            color: var(--azul-escuro);
+        }
+
+        .artigo .autor {
+            font-weight: 700;
+            color: var(--azul-medio);
+            margin-bottom: 18px;
+        }
+
+        .artigo p {
+            font-size: 1.05rem;
+            line-height: 1.8;
+            margin-bottom: 14px;
+        }
+
+        @media (max-width: 760px) {
+            .hero {
+                grid-template-columns: 1fr;
+            }
+
+            .cabecalho {
+                padding: 22px 20px;
+            }
+
+            .conteudo {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="pagina">
+        <header class="cabecalho">
+            <div class="cabecalho-topo">
+                <span class="marcador">Blog de natureza</span>
+                <nav class="menu" aria-label="Menu do blog">
+                    <a href="#">Início</a>
+                    <a href="#">Sobre</a>
+                    <a href="#">Artigos</a>
+                    <a href="#">Contato</a>
+                </nav>
+            </div>
+        </header>
+
+        <main class="conteudo">
+            <section class="hero">
+                <div class="hero-texto">
+                    <span class="tag">Água escondida</span>
+                    <h1>O meu blog é sobre a água que não vemos</h1>
+                    <p>Vou compartilhar histórias, curiosidades e aprendizados sobre a importância da água que está em lugares silenciosos, mas essenciais para a vida.</p>
+                </div>
+                <img class="imagem-post" src="foto1.png" alt="Paisagem natural com reflexos de água">
+            </section>
+
+            <article class="artigo">
+                <h2>Meu primeiro post</h2>
+                <p class="autor">Por: Heloa Helender</p>
+                <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar sobre a importância da água que não vemos e como ela sustenta ecossistemas, cidades e o nosso cotidiano.</p>
+                <p>Nem sempre percebemos a água que está escondida no solo, nos rios subterrâneos e nos ciclos da natureza. Ainda assim, ela faz parte do equilíbrio do planeta e merece atenção, cuidado e respeito.</p>
+                <p>Quando admiramos uma paisagem, muitas vezes vemos só a parte visível. Mas por trás da beleza existe um sistema delicado com água em movimento e em silêncio, fazendo a vida continuar.</p>
+            </article>
+        </main>
+    </div>
+</body>
 </html>
-<h2>meu primeiro post</h2> 
-<p>por: Heloa Helender</p>
-<p> Boas-vindas ao meu novo blog! aqui vou compartilhar sobre a importancia da agua que não vemos 
