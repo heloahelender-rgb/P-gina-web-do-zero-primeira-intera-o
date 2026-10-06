@@ -1,9 +1,31 @@
-// Script para comportamento interativo do blog
+let contadores = {
+    coracao: 0,
+    agua: 0
+};
 
-// Smooth scroll para os links do menu
+function atualizarContadores() {
+    document.getElementById('contador-coracao').textContent = contadores.coracao;
+    document.getElementById('contador-agua').textContent = contadores.agua;
+}
+
+document.getElementById('botao-coracao')?.addEventListener('click', function() {
+    contadores.coracao++;
+    atualizarContadores();
+    this.classList.add('ativo');
+    setTimeout(() => this.classList.remove('ativo'), 300);
+    console.log('❤️ Coração curtido! Total:', contadores.coracao);
+});
+
+document.getElementById('botao-agua')?.addEventListener('click', function() {
+    contadores.agua++;
+    atualizarContadores();
+    this.classList.add('ativo');
+    setTimeout(() => this.classList.remove('ativo'), 300);
+    console.log('💧 Água curtida! Total:', contadores.agua);
+});
+
 document.querySelectorAll('.menu a').forEach(link => {
     link.addEventListener('click', function(e) {
-        // Previne comportamento padrão apenas se tiver um href válido
         if (this.getAttribute('href') !== '#') {
             e.preventDefault();
             console.log('Navegando para: ' + this.textContent);
@@ -11,19 +33,16 @@ document.querySelectorAll('.menu a').forEach(link => {
     });
 });
 
-// Log de boas-vindas no console
 console.log('Bem-vindo ao blog "Água que não vemos"! 🌊');
-console.log('Para mais informações, acesse: https://github.com/heloahelender-rgb');
 
-// Função para adicionar efeito visual ao carregar a página
 document.addEventListener('DOMContentLoaded', function() {
     console.log('Página carregada com sucesso!');
-    
-    // Anima a entrada do conteúdo
+    atualizarContadores();
+
     const conteudo = document.querySelector('.conteudo');
     conteudo.style.opacity = '0';
     conteudo.style.transform = 'translateY(20px)';
-    
+
     setTimeout(() => {
         conteudo.style.transition = 'all 0.6s ease';
         conteudo.style.opacity = '1';
