@@ -12,15 +12,15 @@
             <div class="cabecalho-topo">
                 <span class="marcador">Blog de natureza</span>
                 <nav class="menu" aria-label="Menu do blog">
-                    <a href="#">Início</a>
-                    <a href="#">Sobre</a>
-                    <a href="#">Artigos</a>
-                    <a href="#">Contato</a>
+                    <a href="#inicio">Início</a>
+                    <a href="#natureza">Natureza</a>
+                    <a href="#dicas">Dicas</a>
+                    <a href="#contato">Contato</a>
                 </nav>
             </div>
         </header>
 
-        <main class="conteudo">
+        <main class="conteudo" id="inicio">
             <section class="hero">
                 <div class="hero-texto">
                     <span class="tag">Água escondida</span>
@@ -30,18 +30,65 @@
                 <img class="imagem-post" src="foto1.png" alt="Paisagem natural com reflexos de água">
             </section>
 
-            <article class="artigo">
+            <section class="natureza" id="natureza">
+                <h2>O que a água faz pela natureza</h2>
+
+                <div class="nature-grid">
+                    <div class="nature-card">
+                        <div class="nature-icon">💧</div>
+                        <h3>Ciclo da água</h3>
+                        <p>A água evapora, vira nuvem, cai como chuva e volta ao solo. Sem isso, a natureza para.</p>
+                    </div>
+
+                    <div class="nature-card">
+                        <div class="nature-icon">🌿</div>
+                        <h3>Plantas e vida</h3>
+                        <p>As plantas precisam de água para crescer, produzir oxigênio e sustentar os animais e as pessoas.</p>
+                    </div>
+
+                    <div class="nature-card">
+                        <div class="nature-icon">🌍</div>
+                        <h3>Nosso planeta</h3>
+                        <p>Rios, mares, florestas e solos dependem da água para manter a biodiversidade e o clima.</p>
+                    </div>
+                </div>
+            </section>
+
+            <article class="artigo" id="dicas">
                 <h2>Meu primeiro post</h2>
                 <p class="autor">Por: Heloa Helender</p>
+
                 <p>Boas-vindas ao meu novo blog! Aqui vou compartilhar sobre a importância da água que não vemos e como ela sustenta ecossistemas, cidades e o nosso cotidiano.</p>
                 <p>Nem sempre percebemos a água que está escondida no solo, nos rios subterrâneos e nos ciclos da natureza. Ainda assim, ela faz parte do equilíbrio do planeta e merece atenção.</p>
                 <p>Quando admiramos uma paisagem, muitas vezes vemos só a parte visível. Mas por trás da beleza existe um sistema delicado com água em movimento e em silêncio, fazendo a vida continuar.</p>
+
+                <div class="bloco-info">
+                    <h3>Por que a água é tão importante?</h3>
+                    <p>A água é essencial para todos os seres vivos. Ela participa da nossa alimentação, da limpeza, da saúde, da agricultura e do equilíbrio dos ecossistemas.</p>
+                    <p>Sem água, não há plantas, não há animais, nem vida humana em condições saudáveis.</p>
+                </div>
+
+                <div class="bloco-info">
+                    <h3>Como economizar água?</h3>
+                    <ul>
+                        <li>🚰 Feche a torneira ao escovar os dentes.</li>
+                        <li>🧺 Use a máquina de lavar com carga completa.</li>
+                        <li>🔧 Conserte vazamentos rapidamente.</li>
+                        <li>🌾 Regue as plantas de forma consciente.</li>
+                    </ul>
+                </div>
+
+                <div class="bloco-info">
+                    <h3>Curiosidade</h3>
+                    <p>O corpo humano é composto por aproximadamente 60% de água. Isso mostra como ela é fundamental para a nossa sobrevivência.</p>
+                </div>
 
                 <div class="acoes-artigo">
                     <button class="botao-curtir" id="botao-coracao" title="Curtir">
                         <span class="icone">❤️</span>
                         <span class="contador" id="contador-coracao">0</span>
                     </button>
+
                     <button class="botao-curtir" id="botao-agua" title="Água">
                         <span class="icone">💧</span>
                         <span class="contador" id="contador-agua">0</span>
